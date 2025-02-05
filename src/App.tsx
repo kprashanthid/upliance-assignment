@@ -1,5 +1,4 @@
-// src/pages/MainPage.tsx
-import { Box, Typography, Divider, Grid, Paper } from "@mui/material";
+import { Box, Divider, Grid, Paper } from "@mui/material";
 import Counter from "./components/Counter";
 import Dashboard from "./components/Dashboard";
 import Logout from "./components/Logout";
