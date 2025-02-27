@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { updateUser } from "../redux/userSlice";
 import { Box, Typography } from "@mui/material";
+import "react-quill/dist/quill.snow.css";
 
 const RichTextEditor = () => {
   const bio = useSelector((state: RootState) => state.user.bio);
@@ -15,17 +16,30 @@ const RichTextEditor = () => {
   return (
     <Box
       p={3}
-      height={200}
       bgcolor="white"
-      borderRadius={2}
-      boxShadow={2}
+      borderRadius={3}
+      boxShadow={4}
       maxWidth={600}
       mx="auto"
     >
-      <Typography variant="h5" mb={2}>
+      <Typography variant="h5" fontWeight="bold" color="primary" mb={2}>
         User Bio
       </Typography>
-      <ReactQuill value={bio} onChange={handleChange} />
+      <Box
+        sx={{
+          height: 180,
+          overflow: "auto",
+          border: "1px solid #ddd",
+          borderRadius: "8px",
+          backgroundColor: "#f9f9f9",
+        }}
+      >
+        <ReactQuill
+          value={bio}
+          onChange={handleChange}
+          style={{ height: "100%", border: "none" }}
+        />
+      </Box>
     </Box>
   );
 };
