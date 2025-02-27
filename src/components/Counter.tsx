@@ -40,8 +40,8 @@ const Counter = () => {
             key={index}
             variant="contained"
             sx={{
-              fontSize: "14px",
-              px: 3,
+              fontSize: { xs: "10px", sm: "14px", md: "16px", lg: "18px" },
+              padding: { xs: "10px 16px", sm: "8px 16px", md: "10px 20px" },
               borderRadius: "8px",
               transition: "0.3s",
               "&:hover": { transform: "scale(1.05)" },
